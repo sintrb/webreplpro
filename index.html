@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
@@ -55,3 +56,68 @@
   
   </body>
 </html>
+=======
+<!doctype html>
+<html>
+	<head>
+		<title>MicroPython WebREPL Pro</title>
+		<style>
+			html {
+			background: #555;
+			}
+			h1 {
+			margin-bottom: 20px;
+			font: 20px/1.5 sans-serif;
+			}
+			.file-box {
+			margin: 4px;
+			padding: 4px;
+			background: #888;
+			}
+		</style>
+	</head>
+	<body style="overflow-x: hidden;">
+		<div style="padding:5px 0;">
+			<form style="display:inline-block;">
+				<input type="text" name="webrepl_url" id="url" value="ws://192.168.4.1:8266/" />
+				<input type="submit" id="button" value="Connect" onclick="button_click(); return false;" />
+			</form>
+			<div id="file-boxes" style="display:inline-block;">
+				|
+				<input type="text" name="get_filename" id="get_filename" value="" size="13"/>
+				<input type="file" id="put-file-select" style="display:none;"/>
+				<button onclick="document.getElementById('put-file-select').click();" id="selectfile">Select file</button>
+				<input class="when-connteted" type="button" value="Send to device" id="put-file-button" onclick="put_file(); return false;" />
+				|
+				<input class="when-connteted" type="button" value="Get from device" onclick="get_file(); return false;" />
+				|
+				<button class="when-connteted" onclick="get_file(true); return false;">Load from device</button>
+				<button class="when-connteted" onclick="put_file_from_editor(); return false;">Save to device</button>
+				|
+				<span id="file-status" style="background:gray;"></span>
+				<button id="display-put" style="display:none" onclick="display_put_file();">Display</button>
+			</div>
+		</div>
+
+		<div>
+			<div id="editor"></div>
+		</div>
+		<div style="height:2px;"></div>
+		<div>
+			<div id="term"></div>
+			<br clear="both" />
+		</div>
+		<i>Terminal widget should be focused (text cursor visible) to accept input. Click on it if not.</i><i>To paste, press Ctrl+A, then Ctrl+V</i>
+		<br />
+		GitHub:<a href="https://github.com/sintrb/webreplpro/">https://github.com/sintrb/webreplpro/</a>,
+		Thanks to
+		<a href="https://github.com/micropython/webrepl">https://github.com/micropython/webrepl</a>
+		<script src="jquery.min.js"></script>
+		<script src="term.js"></script>
+		<script src="FileSaver.js"></script>
+		<script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>
+		<script src="ace/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="index.js"></script>
+	</body>
+</html>
+>>>>>>> master
